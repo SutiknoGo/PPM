@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel=stylesheet href=jquery.mobile-1.4.5.min.css>
+    <link rel=stylesheet href=grids.css>
+ <script src=jquery.js></script>
+ <script src=jquery.mobile-1.4.5.js></script>
+	<title></title>
+</head>
+<body>
+
+	<div data-role =header>
+			<h1> Review </h1>
+		</div>
+	<div class="rwd-example">
+			    <!-- Lead story block -->
+			    <div class="ui-block-a">
+			        <div class="ui-body ui-body-d">
+			            <h2>GitHub</h2>
+			            <p> Dari pelajaran PPM ini, saya bisa mengetahui beberapa fungsi-fungsi kegunaan dari GitHub. Seperti cara membuat repositori penyimpanan data, mengupload file proyek supaya bisa dikerjakan bersama dan mengambil kembali proyek yang sudah di kerjakan bersama.</p>
+			        </div>
+			    </div>
+
+			    <!-- secondary story block #1 -->
+			    <div class="ui-block-b">
+			        <div class="ui-body ui-body-d">
+			            <h2>Jquery Mobile</h2>
+			            <p>Saya bisa mempelajari fitur-fitur dalam pembuatan desain tampilan di mobile agar bisa menarik dan mencoba mendesain dengan menggunakan html, JS, dan CSS supaya tampilan bisa berjalan dengan baik.</p>
+			        </div>
+			    </div>
+
+			    <!-- secondary story block #2 -->
+			    <div class="ui-block-c">
+			        <div class="ui-body ui-body-d">
+			            <h2>Angular JS</h2>
+			            <p>Di Angular JS, saya bisa belajar fitur lain yang berbeda dari Jquery Mobile agar desain mobile bisa lebih interaktif. </p>
+			        </div>
+			    </div>
+			</div><!-- /rwd-example -->
+
+			 <form>
+        	<h1>Penilaian:</h1>
+        	<input name="slider-2" id="slider-2" data-highlight="true" min="0" max="100" value="50" type="range">
+    	</form>
+
+    	<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Submit Score</a>
+
+                    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                    <form data-position=fixed>
+                    <div style="padding:20px 20px;">
+                        <h3>Information: </h3>
+                        <label for="un" class="ui-hidden-accessible">Name:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="Your Name" data-theme="a">
+                        <label for="slider-1">Your Age:</label>
+                        <input type="range" name="slider-1" id="slider-1" data-highlight="true" min="0" max="100" value="50">
+                        <h4> Thank You for your response ! </h4>
+                        <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+	  <form>
+          <a href= "index.html"> <input value="Back" type="button"></a>
+      </form>
+
+        <div data-role = footer data-position=fixed>
+				<h1> Copyright &copy 2018 </h1>
+			</div>
+
+
+</body>
+</html>

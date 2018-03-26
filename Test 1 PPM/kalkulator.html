@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width-device-width, initial-scale=1">
+  <link rel=stylesheet href=jquery.mobile-1.4.5.min.css>
+ <script src=jquery.js></script>
+ <script src=jquery.mobile-1.4.5.js></script>
+  <title></title>
+</head>
+<body>
+
+  <button class="show-page-loading-msg" data-theme="a" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme a" data-inline="true">A</button>
+    <button class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme b" data-inline="true">B</button>
+    <button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+  
+    <div data-role="page" class="jqm-demos" id="panel-fixed-page1" data-title="Kalkulator Konversi" data-url="panel-fixed-page1">
+        <div data-role="header" data-position="fixed">
+            <h1>Kalkulator Konversi</h1>
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+        </div><!-- /header -->
+        <div role="main" class="ui-content jqm-content jqm-fullwidth">
+         
+        <b>Masukkan Bilangan Desimal..</b><br>
+        <input type="text" name="convert" id="conv"><input type="button" onclick="konversi()" value="Convert">
+        </form>
+        <br>
+        <br>
+        <div id="hasil"></div>
+        <script type="text/javascript">
+
+        function konversi(){
+         x = document.getElementById("conv").value;
+         x = parseInt(x);
+         if(isNaN(x)||document.getElementById("conv").value == "")
+         {
+          alert("Masukkan nilai desimal");
+          document.getElementById("conv").value = "";
+          document.getElementById("conv").focus();
+          return false;
+         }
+
+          bin = x.toString(2);
+          hex = x.toString(16).toUpperCase();
+          okt = x.toString(8);
+          
+          pesan = "Hasil konversi bilangan Decimal "+x+" ke bilangan Biner adalah "+bin+"<br>";
+          pesan = pesan + "Hasil konversi bilangan Decimal "+x+" ke bilangan Hexadecimal adalah "+hex+"<br>";
+          pesan = pesan + "Hasil konversi bilangan Decimal "+x+" ke bilangan Oktal adalah "+bin+"<br>";
+          document.getElementById("hasil");
+          hasil.innerHTML = pesan;
+         document.getElementById("conv").value = "";
+
+        }
+
+        </script>
+        </div><!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <h1> Copyright &copy 2018 </h1>
+        </div><!-- /footer -->
+        <div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li><a href="https://id.wikipedia.org/wiki/Sistem_bilangan_desimal">Desimal</a></li>
+                    <li><a href="https://id.wikipedia.org/wiki/Sistem_bilangan_biner">Biner</a></li>
+                    <li><a href="#https://en.wikipedia.org/wiki/Hexadecimal">Hexadecimal</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Octal">Octal decimal</a></li>
+                    <li><a href="index.html">Back</a></li>
+            </ul>
+        </div><!-- /panel -->
+        <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
+            <form class="userform">
+                <h2>Login</h2>
+                <label for="name">Username:</label>
+                <input name="name" id="name" value="" data-clear-btn="true" data-mini="true" type="text">
+                <label for="password">Password:</label>
+                <input name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true" type="password">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                    <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                </div>
+            </form>
+        </div><!-- /panel -->
+    </div>
+
+ 
+
+      
+</body>
+</html>

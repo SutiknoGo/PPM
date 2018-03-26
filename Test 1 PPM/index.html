@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel=stylesheet href=jquery.mobile-1.4.5.min.css>
+    <script src=jquery.js></script>
+    <script src=theme.js></script>
+    <script src=dynamic.js></script>
+    <script src=jquery.mobile-1.4.5.js></script>
+
+	<title></title>
+</head>
+<body>
+	<div data-role = page>
+		<div data-role =header>
+			<h1> Sutikno Goutama </h1>
+		</div>
+
+		<div data-role = content>
+			<br> 
+			<br>
+    		<div data-role="collapsible" data-theme="b" data-content-theme="b">
+			<h2> Main Menu </h2>
+			    <ul data-role="listview" data-filter="false">
+			        <li><a href="kalkulator.html">Kalkulator Konversi</a></li>
+			        <li><a href="RGB.html">RGB</a></li>
+			        <li><a href="Review.html">Review</a></li>
+			    </ul>
+			</div>
+
+			<br>
+			<br>
+			<form>
+			<div class="ui-field-contain">
+			    <label for="select-native-3">Main Menu : </label>
+			    <select name="select-native-3" id="select-native-3" data-iconpos="right">
+			    	<option value="1">Select Option .. </option>
+			        <a href="kalkulator.html"><option value="2">Kalkulator</option></a>
+			        <a href="RGB.html"><option value="3">RGB</option></a>
+			        <a href="Review.html"><option value="4">Review</option></a>
+			    </select>
+			</div>
+			</form>
+
+		</div>
+			<div data-role = footer data-position=fixed>
+				<h1> Copyright &copy 2018 </h1>
+			</div>
+	</div>

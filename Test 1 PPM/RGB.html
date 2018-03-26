@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel=stylesheet href=jquery.mobile-1.4.5.min.css>
+ <script src=jquery.js></script>
+ <script src=jquery.mobile-1.4.5.js></script>
+ <script src=theme.js></script>
+	<title></title>
+</head>
+<body>
+	<div data-role =header>
+			<h1> RGB </h1>
+		</div>
+		<br>
+		<h3><b> Masukkan 6 digit kode warna hex dan tekan tombol Convert: </b></h3>
+		<br>
+		<style>
+		table.calc, .calc2 {
+		    border-spacing: 0px;
+		    border-collapse: separate;
+		    background: #e8e8e8;
+		    border: 1px #ddd solid;
+		    padding: 15px;
+		    width: 100%;
+		}
+		@media (min-width: 577px)
+		.calc2 {
+		    padding: 15px;
+		}
+		</style>
+
+		<br>
+		<form name="calcform">
+		<table class="calc2">
+		  <tbody>
+		<tr>
+		   <td>Enter hex color code (#):</td>
+		   <td><input autofocus="" class="intext" name="hex" placeholder="000000" type="text"></td>
+		  </tr>
+		<tr>
+		   <td></td>
+		   <td><input class="btn" onclick="calc()" value="Convert" type="button"> <input class="btn" onclick="clr()" value="Reset" type="reset"></td>
+		  </tr>
+		<tr>
+		   <td>Red color (R):</td>
+		   <td><input class="outtext" name="r" readonly="readonly" onclick="this.select()" type="text"></td>
+		  </tr>
+		<tr>
+		   <td>Green color (G):</td>
+		   <td><input class="outtext" name="g" readonly="readonly" onclick="this.select()" type="text"></td>
+		  </tr>
+		<tr>
+		   <td>Blue color (B):</td>
+		   <td><input class="outtext" name="b" readonly="readonly" onclick="this.select()" type="text"></td>
+		  </tr>
+		<tr>
+		   <td>Color preview:</td>
+		   <td><input name="color" readonly="readonly" style="border: 1px solid black; height: 50px; background-color: rgb(255, 255, 0);" type="text"></td>
+		  </tr>
+		</tbody></table>
+		</form>
+		<br>
+		<div style="text-align: center;">
+		<span style="font-size: large;"><b>Tabel Warna Hex ke RGB</b></span></div>
+		<div style="text-align: center;">
+		<br></div>
+		<div>
+		<table class="dtable" style="background-color: white; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; color: #222222; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 14px; margin-bottom: 5px; padding: 5px; width: 100%;"><tbody style="box-sizing: border-box;">
+		<tr style="box-sizing: border-box;"><th style="background: rgb(224, 224, 224); border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-weight: normal; padding: 5px; text-align: center;">Color</th><th style="background: rgb(224, 224, 224); border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-weight: normal; padding: 5px; text-align: center;">Color<br>
+		<div style="box-sizing: border-box; line-height: 1.8; margin-bottom: 2px; margin-top: 2px;">
+		name</div>
+		</th><th style="background: rgb(224, 224, 224); border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-weight: normal; padding: 5px; text-align: center;">Hex</th><th style="background: rgb(224, 224, 224); border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-weight: normal; padding: 5px; text-align: center;">(R,G,B)</th></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: black; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Black</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#000000</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,0,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">White</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#FFFFFF</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(255,255,255)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: red; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Red</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#FF0000</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(255,0,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: lime; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Lime</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#00FF00</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,255,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: blue; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Blue</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#0000FF</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,0,255)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: yellow; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Yellow</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#FFFF00</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(255,255,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: cyan; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Cyan</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#00FFFF</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,255,255)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: magenta; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Magenta</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#FF00FF</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(255,0,255)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: silver; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Silver</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#C0C0C0</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(192,192,192)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: grey; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Gray</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#808080</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(128,128,128)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: maroon; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Maroon</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#800000</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(128,0,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: olive; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Olive</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#808000</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(128,128,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: green; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Green</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#008000</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,128,0)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: purple; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Purple</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#800080</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(128,0,128)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: teal; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Teal</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#008080</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,128,128)</td></tr>
+		<tr style="box-sizing: border-box;"><td style="background-color: navy; border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;"></td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">Navy</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">#000080</td><td style="border-collapse: collapse; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; padding: 5px;">(0,0,128)</td></tr>
+		</tbody></table>
+		<br>
+		<br>
+		<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.CeGSHvdMv28.O/m=auth/exm=plusone,profile/rt=j/sv=1/d=1/ed=1/am=AQE/rs=AGLTcCOW23aRJ2pmlnfUKNFxci6xnDRS4g/cb=gapi.loaded_1" async=""></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.CeGSHvdMv28.O/m=plusone,profile/rt=j/sv=1/d=1/ed=1/am=AQE/rs=AGLTcCOW23aRJ2pmlnfUKNFxci6xnDRS4g/cb=gapi.loaded_0" async=""></script><script type="text/javascript">
+		  <!--
+		  function clr()
+		  {
+		   document.calcform.reset();
+		   document.calcform.color.style.backgroundColor="#FFFFFF";
+		  }
+		  function calc() 
+		  {
+		   hex = document.calcform.hex.value;
+		   if( hex=="" ) hex="000000";
+		   if( hex.charAt(0)=="#" ) hex=hex.substring(1,hex.length);
+		   if( hex.length!=6 )
+		   {
+		    alert("Please enter 6 digits color code !");
+		    return;
+		   }
+		   r = hex.substring(0,2);
+		   g = hex.substring(2,4);
+		   b = hex.substring(4,6);
+		   r = parseInt(r, 16);
+		   g = parseInt(g, 16);
+		   b = parseInt(b, 16);
+		   document.calcform.r.value = r;
+		   document.calcform.g.value = g;
+		   document.calcform.b.value = b;
+		    document.calcform.color.style.backgroundColor='#'+hex;
+		  }
+		  //-->
+		 </script></div>
+		<div style="clear: both;"></div>
+		</div>
+
+
+	<ul data-role="listview" data-filter="true" data-filter-placeholder="Warna Dasar" data-inset="true">
+		    <li><a href="https://id.wikipedia.org/wiki/Merah">Merah </a></li>
+		    <li><a href="https://id.wikipedia.org/wiki/Hijau">Hijau</a></li>
+		    <li><a href="https://en.wikipedia.org/wiki/Biru">Biru</a></li>
+		</ul>
+
+		<br>
+		<br>
+		<h2> Choose Your Theme : </h2>
+			<button class="show-page-loading-msg" data-theme="a" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme A" data-inline="true">A</button>
+			<button class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Loading theme B" data-inline="true">B</button>
+			<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+			<br>
+			<br>
+	  <form>
+          <a href= "index.html"> <input value="Back" type="button"></a>
+      </form>
+
+      <div data-role = footer data-position=fixed>
+				<h1> Copyright &copy 2018 </h1>
+			</div>
+
+</body>
+</html>
+
